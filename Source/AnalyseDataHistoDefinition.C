@@ -747,4 +747,12 @@ TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,10
 
 TH2F *hGammaT2y = new TH2F("hGammaT2y","Gamma cal energy vs T2 y pos",200,0,2,100,0,20000);
 
+TH2F *hxygamma = new TH2F("hxygamma","xy gamma distribution; X  [#mum]; y  [#mum]",100,-20000,20000,100,-20000,20000);
+TH1F *hxgamma = new TH1F("hxgamma", "xy gamma distribution; Counts; x  [#mum], 100,-20000,20000);
+TH1F *hygamma = new TH1F("hygamma", "xy gamma distribution; Counts; y  [#mum], 100,-20000,20000);
+
+
+
+
+
 

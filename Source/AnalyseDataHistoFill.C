@@ -589,7 +589,10 @@ hx3Clu->Fill(cluster[4]);
 hy3Clu->Fill(cluster[5]);
 
 
-
+//distribution of gamma at the silicon Detectors
+hxygamma->Fill(BcgammaX,BcgammaY); //xy distribution
+hxgamma->Fill(BcgammaX); //x distribution
+hygamma->Fill(BcgammaY); //y distribution
 
 
 

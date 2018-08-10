@@ -120,7 +120,9 @@
          //&cluster[2,3] -> BCgamma[X,Y]
          //&cluster[4,5] -> BC1e[X,Y]
          //&cluster[6,7] -> BC2e[X,Y]     
-
+         BcgammaX=cluster[2]*1.; //horizontal coordinate in the gamma silicon detector
+         BcgammaY=cluster[3]*1.; //vertical coordinate in the gamma silicon detector
+         
         //printf("kuku %d %d %d %d %d %d %d %d \n",deva[0],deva[1],deva[2],deva[3],deva[4],deva[5],deva[6],deva[7]);  
          
    //********

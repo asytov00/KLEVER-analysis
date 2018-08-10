@@ -110,6 +110,8 @@ int scanflag = -1; // flag for the type of scan: (0) lateral scan, (1) angular s
 float h2st = 0.;
 float cost1 = 0.3*3.59; // 10/3*B*L [Tm]  H4 2010  Bending Magnet @ 3.59 Tm
 float cost2 = 0.3*3.59/120.; // 10/3*B*L/120 [Tm/(GeV/c)]   H4 2010  Positron/Electron Beam @ 120 GeV/c
+float BcgammaX; //horizontal coordinate in the gamma silicon detector
+float BcgammaY; //vertical coordinate in the gamma silicon detector
 
 float old_gonio_rot;
 float gonio_rot_first;
