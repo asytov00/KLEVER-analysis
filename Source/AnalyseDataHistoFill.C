@@ -597,7 +597,20 @@ hygamma->Fill(BcgammaY); //y distribution
 if  ((cluster[0]==1) && (cluster[1]==1))
 {
     
-    
+hS3maxPP->Fill(scin3);
+hS4maxPP->Fill(scin4);
+
+hS4maxScanPP->Fill((float)h2st,scin4);
+
+hS4maxGonioPP->Fill((float)gonio_rot,scin4);
+
+hGammaPP->Fill(calo_crys_tot_energy_gamma);
+hGammaStepPP->Fill((float)goniostep,calo_crys_tot_energy_gamma);
+hS4StepPP->Fill((float)goniostep,scin4);
+
+hGammaS4PP->Fill(scin4,calo_crys_tot_energy_gamma);
+hGammaT2xPP->Fill(pos[2],calo_crys_tot_energy_gamma);
+hGammaT2yPP->Fill(pos[3],calo_crys_tot_energy_gamma); 
     
 }
 

@@ -754,5 +754,29 @@ TH1F *hygamma = new TH1F("hygamma", "xy gamma distribution; Counts; y  [#mum]", 
 
 
 
+TH1F *hS3maxPP = new TH1F("hS3maxPP", "Scintillator S3 Max, with T3 clasters condition; Scintillator Max",100,0,20000);
+TH1F *hS4maxPP = new TH1F("hS4maxPP", "Scintillator S4 Max, with T3 clasters condition; Scintillator Max",100,0,20000);
+
+TH2F *hS4maxScanPP = new TH2F("hS4maxScanPP", "S4 Vs Scan of Rotational + X in-going angle (#theta_{x,in}), with T3 clasters condition; Scan Angle [#murad]; S4 signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
+
+TH2F *hS4maxGonioPP = new TH2F("hS4maxGonioPP","S4 Vs Scan of Rotational - X in-going angle (#theta_{x,in}), with T3 clasters condition; Scan Angle [#murad]; S4 signal",400,-50000,50000,100,0,20000);
+
+
+TH1F *hGammaPP = new TH1F("hGammaPP", "Gamma cal energy, with T3 clasters condition", 200, 0, 20000);
+TH2F *hGammaStepPP = new TH2F("hGammaStepPP","Gamma energy vs scan step, with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
+
+TH2F *hS4StepPP = new TH2F("hS4StepPP","S4 signal vs scan step, with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
+
+TH2F *hGammaS4PP = new TH2F("hGammaS4PP", "Gamma cal energy vs S4 signal, with T3 clasters condition", 200, 0, 20000, 200, 0, 20000);
+
+TH2F *hGammaT2xPP = new TH2F("hGammaT2xPP","Gamma cal energy vs T2 x pos, with T3 clasters condition",200,0,2,100,0,20000);
+
+TH2F *hGammaT2yPP = new TH2F("hGammaT2yPP","Gamma cal energy vs T2 y pos, with T3 clasters condition",200,0,2,100,0,20000);
+
+TH2F *hxygammaPP = new TH2F("hxygammaPP","xy gamma distribution, with T3 clasters condition; X  [#mum]; y  [#mum]",100,-20000,20000,100,-20000,20000);
+TH1F *hxgammaPP = new TH1F("hxgammaPP, with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-20000,20000);
+TH1F *hygammaPP = new TH1F("hygammaPP, with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-20000,20000);
+
+
 
 
