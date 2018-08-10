@@ -9,9 +9,9 @@
 
 #define MAX_ENTRIES 100000000000
 
-#define N_RUNS 2
+#define N_RUNS 1
 
-#define RUN_NUMB  400241
+#define RUN_NUMB  400260
 
 #define RUN_NUMB2 400242
 #define RUN_NUMB3 300314

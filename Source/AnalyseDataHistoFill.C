@@ -594,7 +594,12 @@ hxygamma->Fill(BcgammaX,BcgammaY); //xy distribution
 hxgamma->Fill(BcgammaX); //x distribution
 hygamma->Fill(BcgammaY); //y distribution
 
-
+if  ((cluster[0]==1) && (cluster[1]==1))
+{
+    
+    
+    
+}
 
 
 
