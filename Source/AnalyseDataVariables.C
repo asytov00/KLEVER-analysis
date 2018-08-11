@@ -68,6 +68,7 @@ float calo_crys_tot_energy;
 float calo_crys_tot_energy_gamma;//calorimetry function from calibration for gamma 2018
 float calo_crys_tot_energy_efast;//calorimetry function from calibration for fast electrons/positrons 2018
 float calo_crys_tot_energy_eslow;//calorimetry function from calibration for slow electrons/positrons 2018
+float devacal[8];
 float scin;//scintillator function 2018
 float photom;//photomultiplier function 2018
 

@@ -520,9 +520,8 @@ TH1F *hCalo2018ADC2 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);
 TH1F *hCalo2018ADC3 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);
 TH1F *hCalo2018ADC4 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);
 
-double EminCalo = -0.5;
-
-double EmaxCalo = 140.5;
+double EminCalo = 0.;
+double EmaxCalo = 140.;
 int binCalo = (EmaxCalo - EminCalo) * 2.;
 
 //scan plots for gamma 2018
@@ -750,6 +749,9 @@ TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,bi
 TH2F *hGammaT2y = new TH2F("hGammaT2y","Gamma cal energy vs T2 y pos",200,0,2,binCalo,EminCalo,EmaxCalo);
 
 TH1F *helectron = new TH1F("helectron", "Electrons cal energy", binCalo,EminCalo,EmaxCalo);
+TH2F *hS4electronPP = new TH2F("hS4electronPP", "S4 vs electron cal energy", binCalo,EminCalo,EmaxCalo,100,0,20000);
+
+
 
 TH2F *hxygamma = new TH2F("hxygamma","xy gamma distribution; X  [#mum]; y  [#mum]",100,-20000,20000,100,-20000,20000);
 TH1F *hxgamma = new TH1F("hxgamma", "xy gamma distribution; Counts; x  [#mum]", 100,-20000,20000);

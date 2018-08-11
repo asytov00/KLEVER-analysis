@@ -103,79 +103,45 @@ if( (runnumb >= 300225)) {
      scin=deva[0]; //scintillator signal 2018        
      photom=deva[1]; //photomultiplier 2018    
     
-}  
+ }  
 
 
 //***************KLEVER EXPERIMENT*****************
 
+
 if(KLEVER){ 
+  
+  scin3=deva[0]; //scintillator before crystal
+  scin4=deva[1];  //scintillator after crystal
+  
+  devacal[2] = (deva[2]+145.053)/79.7879;
+  devacal[3] = (deva[3]+104.883)/78.1859;
+  devacal[4] = (deva[4]+171.443)/109.463;
+  devacal[5] = (deva[5]+117.115)/102.42;
+  devacal[6] = (deva[6]+182.678)/80.0947;
+  devacal[7] = (deva[7]+151.721)/83.4786;
+  
+  if (runnumb >= 400255) {
     
-    if( (runnumb >= 400197)) {
-
-
-        calo_crys_tot_energy_gamma = (deva[2]+145.053)/79.7879;//(deva[2] + 71.) /81.6422; //calorimetry function from calibration for gamma 2018     
-        
-        calo_crys_tot_energy_efast = (deva[3]+104.883)/78.1859+(deva[4]+171.443)/109.463+(deva[5]+117.115)/102.42+(deva[6]+182.678)/80.0947+(deva[7]+151.721)/83.4786 ; //calorimetry function from calibration for fast electrons/positrons 2018        
-
-        scin3=deva[0]; //scintillator before crystal
-        scin4=deva[1];  //scintillator after crystal
-    }
-
-    if( (runnumb >= 400243)) {
-
-
-        calo_crys_tot_energy_gamma = (deva[2]+145.053)/79.7879*9368/7520;//(deva[2] + 71.) /81.6422; //calorimetry function from calibration for gamma 2018     
-        
-        calo_crys_tot_energy_efast = (deva[3]+104.883)/78.1859*9236/9389+(deva[4]+171.443)/109.463*12915/12860+(deva[5]+117.115)/102.42*12126/12080+(deva[6]+182.678)/80.0947*9399/9459+(deva[7]+151.721)/83.4786*9823/9945 ; //calorimetry function from calibration for fast electrons/positrons 2018        
-
-        scin3=deva[0]; //scintillator before crystal
-        scin4=deva[1];  //scintillator after crystal
-    }   
- 
-    if( (runnumb >= 400252)) {
-
-
-        calo_crys_tot_energy_gamma = (deva[2]+182.912)/101.046;//(deva[2] + 71.) /81.6422; //calorimetry function from calibration for gamma 2018     
-        
-        calo_crys_tot_energy_efast = (deva[3]+104.883)/78.1859*9236/9389+(deva[4]+171.443)/109.463*12915/12860+(deva[5]+117.115)/102.42*12126/12080+(deva[6]+182.678)/80.0947*9399/9459+(deva[7]+151.721)/83.4786*9823/9945 ; //calorimetry function from calibration for fast electrons/positrons 2018        
-
-        scin3=deva[0]; //scintillator before crystal
-        scin4=deva[1];  //scintillator after crystal
-    }    
-
-    if( (runnumb >= 400273)) {
-
-
-        calo_crys_tot_energy_gamma = (deva[2]+142.887)/93.9701;//(deva[2] + 71.) /81.6422; //calorimetry function from calibration for gamma 2018     
-        
-        calo_crys_tot_energy_efast = (deva[3]+104.883)/78.1859*9236/9389+(deva[4]+171.443)/109.463*12915/12860+(deva[5]+117.115)/102.42*12126/12080+(deva[6]+182.678)/80.0947*9399/9459+(deva[7]+151.721)/83.4786*9823/9945 ; //calorimetry function from calibration for fast electrons/positrons 2018        
-
-        scin3=deva[0]; //scintillator before crystal
-        scin4=deva[1];  //scintillator after crystal
-    }       
+    devacal[2] = (deva[2]+182.912)/101.046;
+    devacal[3] *= 9236/9389;
+    devacal[4] *= 12915/12860;
+    devacal[5] *= 12126/12080;
+    devacal[6] *= 9399/9459;
+    devacal[7] *= 9823/9945;
     
+  }
+  
+  if (runnumb >= 400276) {
+    
+    devacal[3] = (deva[3]+142.897)/93.9701;
+    
+  }
+  
+  calo_crys_tot_energy_gamma = devacal[2];
+  calo_crys_tot_energy_efast = devacal[3] + devacal[4] + devacal[5] + devacal[6] + devacal[7];
+  
  }
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
  
  
  
