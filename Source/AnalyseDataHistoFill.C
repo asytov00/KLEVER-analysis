@@ -576,6 +576,8 @@ hGamma->Fill(calo_crys_tot_energy_gamma);
 hGammaStep->Fill((float)goniostep,calo_crys_tot_energy_gamma);
 hS4Step->Fill((float)goniostep,scin4);
 
+helectron->Fill(calo_crys_tot_energy_efast);
+
 hGammaS4->Fill(scin4,calo_crys_tot_energy_gamma);
 hGammaT2x->Fill(pos[2],calo_crys_tot_energy_gamma);
 hGammaT2y->Fill(pos[3],calo_crys_tot_energy_gamma);
@@ -611,7 +613,25 @@ hS4StepPP->Fill((float)goniostep,scin4);
 hGammaS4PP->Fill(scin4,calo_crys_tot_energy_gamma);
 hGammaT2xPP->Fill(pos[2],calo_crys_tot_energy_gamma);
 hGammaT2yPP->Fill(pos[3],calo_crys_tot_energy_gamma); 
-    
+
+helectronPP->Fill(calo_crys_tot_energy_efast);
+
+//distribution of gamma at the silicon Detectors
+hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
+hxgammaPP->Fill(BcgammaX); //x distribution
+hygammaPP->Fill(BcgammaY); //y distribution
+
+//distribution of electrons at the BC1 Detectors
+hxyBC1ePP->Fill(BC1eX,BC1eY); //xy distribution
+hxBC1ePP->Fill(BC1eX); //x distribution
+hyBC1ePP->Fill(BC1eY); //y distribution
+
+//distribution of electrons at the BC2 Detectors
+hxyBC2ePP->Fill(BC2eX,BC2eY); //xy distribution
+hxBC2ePP->Fill(BC2eX); //x distribution
+hyBC2ePP->Fill(BC2eY); //y distribution
+
+
 }
 
 

@@ -736,16 +736,18 @@ TH2F *hS4maxScan = new TH2F("hS4maxScan", "S4 Vs Scan of Rotational + X in-going
 TH2F *hS4maxGonio = new TH2F("hS4maxGonio","S4 Vs Scan of Rotational - X in-going angle (#theta_{x,in}); Scan Angle [#murad]; S4 signal",400,-50000,50000,100,0,20000);
 
 
-TH1F *hGamma = new TH1F("hGamma", "Gamma cal energy", 200, 0, 20000);
-TH2F *hGammaStep = new TH2F("hGammaStep","Gamma energy vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
+TH1F *hGamma = new TH1F("hGamma", "Gamma cal energy", binCalo,EminCalo,EmaxCalo);
+TH2F *hGammaStep = new TH2F("hGammaStep","Gamma energy vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,binCalo,EminCalo,EmaxCalo);
 
 TH2F *hS4Step = new TH2F("hS4Step","S4 signal vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
 
-TH2F *hGammaS4 = new TH2F("hGammaS4", "Gamma cal energy vs S4 signal", 200, 0, 20000, 200, 0, 20000);
+TH2F *hGammaS4 = new TH2F("hGammaS4", "Gamma cal energy vs S4 signal", 200, 0, 20000,binCalo,EminCalo,EmaxCalo);
 
-TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,100,0,20000);
+TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,binCalo,EminCalo,EmaxCalo);
 
-TH2F *hGammaT2y = new TH2F("hGammaT2y","Gamma cal energy vs T2 y pos",200,0,2,100,0,20000);
+TH2F *hGammaT2y = new TH2F("hGammaT2y","Gamma cal energy vs T2 y pos",200,0,2,binCalo,EminCalo,EmaxCalo);
+
+TH1F *helectron = new TH1F("helectron", "Electrons cal energy", binCalo,EminCalo,EmaxCalo);
 
 TH2F *hxygamma = new TH2F("hxygamma","xy gamma distribution; X  [#mum]; y  [#mum]",100,-20000,20000,100,-20000,20000);
 TH1F *hxgamma = new TH1F("hxgamma", "xy gamma distribution; Counts; x  [#mum]", 100,-20000,20000);
@@ -754,29 +756,37 @@ TH1F *hygamma = new TH1F("hygamma", "xy gamma distribution; Counts; y  [#mum]", 
 
 
 
-TH1F *hS3maxPP = new TH1F("hS3maxPP", "Scintillator S3 Max, with T3 clasters condition; Scintillator Max",100,0,20000);
-TH1F *hS4maxPP = new TH1F("hS4maxPP", "Scintillator S4 Max, with T3 clasters condition; Scintillator Max",100,0,20000);
+TH1F *hS3maxPP = new TH1F("hS3maxPP", "Scintillator S3 Max with T3 clasters condition; Scintillator Max",100,0,20000);
+TH1F *hS4maxPP = new TH1F("hS4maxPP", "Scintillator S4 Max with T3 clasters condition; Scintillator Max",100,0,20000);
 
 TH2F *hS4maxScanPP = new TH2F("hS4maxScanPP", "S4 Vs Scan of Rotational + X in-going angle (#theta_{x,in}), with T3 clasters condition; Scan Angle [#murad]; S4 signal",(nbin+4)*20,rotSX,rotDX,100,0,20000);
 
 TH2F *hS4maxGonioPP = new TH2F("hS4maxGonioPP","S4 Vs Scan of Rotational - X in-going angle (#theta_{x,in}), with T3 clasters condition; Scan Angle [#murad]; S4 signal",400,-50000,50000,100,0,20000);
 
 
-TH1F *hGammaPP = new TH1F("hGammaPP", "Gamma cal energy, with T3 clasters condition", 200, 0, 20000);
-TH2F *hGammaStepPP = new TH2F("hGammaStepPP","Gamma energy vs scan step, with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
+TH1F *hGammaPP = new TH1F("hGammaPP", "Gamma cal energy with T3 clasters condition", binCalo,EminCalo,EmaxCalo);
+TH2F *hGammaStepPP = new TH2F("hGammaStepPP","Gamma energy vs scan step, with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,binCalo,EminCalo,EmaxCalo);
 
-TH2F *hS4StepPP = new TH2F("hS4StepPP","S4 signal vs scan step, with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
+TH2F *hS4StepPP = new TH2F("hS4StepPP","S4 signal vs scan step with T3 clasters condition",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
 
-TH2F *hGammaS4PP = new TH2F("hGammaS4PP", "Gamma cal energy vs S4 signal, with T3 clasters condition", 200, 0, 20000, 200, 0, 20000);
+TH2F *hGammaS4PP = new TH2F("hGammaS4PP", "Gamma cal energy vs S4 signal with T3 clasters condition", 200, 0, 20000, binCalo,EminCalo,EmaxCalo);
 
-TH2F *hGammaT2xPP = new TH2F("hGammaT2xPP","Gamma cal energy vs T2 x pos, with T3 clasters condition",200,0,2,100,0,20000);
+TH2F *hGammaT2xPP = new TH2F("hGammaT2xPP","Gamma cal energy vs T2 x pos with T3 clasters condition",200,0,2,binCalo,EminCalo,EmaxCalo);
 
-TH2F *hGammaT2yPP = new TH2F("hGammaT2yPP","Gamma cal energy vs T2 y pos, with T3 clasters condition",200,0,2,100,0,20000);
+TH2F *hGammaT2yPP = new TH2F("hGammaT2yPP","Gamma cal energy vs T2 y pos with T3 clasters condition",200,0,2,binCalo,EminCalo,EmaxCalo);
 
-TH2F *hxygammaPP = new TH2F("hxygammaPP","xy gamma distribution, with T3 clasters condition; X  [#mum]; y  [#mum]",100,-20000,20000,100,-20000,20000);
-TH1F *hxgammaPP = new TH1F("hxgammaPP, with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-20000,20000);
-TH1F *hygammaPP = new TH1F("hygammaPP, with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-20000,20000);
+TH1F *helectronPP = new TH1F("helectronPP", "Electrons cal energy", binCalo,EminCalo,EmaxCalo);
 
+TH2F *hxygammaPP = new TH2F("hxygammaPP","xy gamma distribution with T3 clasters condition; X  [#mum]; y  [#mum]",100,-90000,150000,100,-90000,150000);
+TH1F *hxgammaPP = new TH1F("hxgammaPP, x gamma distribution with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-90000,150000);
+TH1F *hygammaPP = new TH1F("hygammaPP, y gamma distribution with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-90000,150000);
 
+TH2F *hxyBC1ePP = new TH2F("hxyBC1ePP","xy electrons distribution at the BC1 detector with T3 clasters condition; X  [#mum]; y  [#mum]",100,-90000,150000,100,-90000,150000);
+TH1F *hxBC1ePP = new TH1F("hxBC1ePP, x electrons distribution at the BC1 detector with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-90000,150000);
+TH1F *hyBC1ePP = new TH1F("hyBC1ePP, y electrons distribution at the BC1 detector with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-90000,150000);
+
+TH2F *hxyBC2ePP = new TH2F("hxyBC2ePP","xy electrons distribution at the BC2 detector with T3 clasters condition; X  [#mum]; y  [#mum]",100,-90000,150000,100,-90000,150000);
+TH1F *hxBC2ePP = new TH1F("hxBC2ePP, x electrons distribution at the BC2 detector with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-90000,150000);
+TH1F *hyBC2ePP = new TH1F("hyBC2ePP, y electrons distribution at the BC2 detector with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-90000,150000);
 
 

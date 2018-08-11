@@ -113,15 +113,21 @@
          //&cluster[6,7] -> BC2e[X,Y]
 
     
-        for(unsigned int i0=0;i0<88;i0++){
-        fscanf(filein,"%f",&(scin));       
+        for(unsigned int i0=0;i0<8;i0++){
+            for(unsigned int j0=0;j0<11;j0++){
+                fscanf(filein,"%f",&(posF[i0][j0]));       
+            }
     }
          //&cluster[0,1] -> T3[X,Y] after photon production
          //&cluster[2,3] -> BCgamma[X,Y]
          //&cluster[4,5] -> BC1e[X,Y]
          //&cluster[6,7] -> BC2e[X,Y]     
-         BcgammaX=cluster[2]*1.; //horizontal coordinate in the gamma silicon detector
-         BcgammaY=cluster[3]*1.; //vertical coordinate in the gamma silicon detector
+         BcgammaX=posF[2][1]/ 0.0001 ;//cm -> microns //horizontal coordinate in the gamma silicon detector
+         BcgammaY=posF[3][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the gamma silicon detector
+         BC1eX=posF[4][1]/ 0.0001 ;//cm -> microns//horizontal coordinate in the B1 detector
+         BC1eY=posF[5][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the B1 detector
+         BC2eX=posF[6][1]/ 0.0001 ;//cm -> microns //horizontal coordinate in the B2 detector
+         BC2eY=posF[7][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the B2 detector
          
         //printf("kuku %d %d %d %d %d %d %d %d \n",deva[0],deva[1],deva[2],deva[3],deva[4],deva[5],deva[6],deva[7]);  
          

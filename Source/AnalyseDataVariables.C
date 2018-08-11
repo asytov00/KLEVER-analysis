@@ -43,6 +43,7 @@ float temp;
 float pos[16]; //cm -> position in ascii file
 float posMin[16]; //cm -> position in ascii file
 float posMax[16]; //cm -> position in ascii file
+float posF[8][11]; //cm -> new positions in ascii file in Klever experiment
 for(ijkl=0;ijkl<16;ijkl++) posMin[ijkl]=+999999999.;
 for(ijkl=0;ijkl<16;ijkl++) posMax[ijkl]=-999999999.;
 int nstrip[12]; //# -> strip hitted in ascii file
@@ -112,6 +113,10 @@ float cost1 = 0.3*3.59; // 10/3*B*L [Tm]  H4 2010  Bending Magnet @ 3.59 Tm
 float cost2 = 0.3*3.59/120.; // 10/3*B*L/120 [Tm/(GeV/c)]   H4 2010  Positron/Electron Beam @ 120 GeV/c
 float BcgammaX; //horizontal coordinate in the gamma silicon detector
 float BcgammaY; //vertical coordinate in the gamma silicon detector
+float BC1eX; //horizontal coordinate in the B1 detector
+float BC1eY; //vertical coordinate in the B1 detector
+float BC2eX; //horizontal coordinate in the B2 detector
+float BC2eY; //vertical coordinate in the B2 detector
 
 float old_gonio_rot;
 float gonio_rot_first;
