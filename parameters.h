@@ -5,13 +5,15 @@
 #define MONTH 8
 #define KLEVER 1 //1 for Klever experiment
 
+#define E0 120. //initial energy of incoming beam 
+
 #define SQR(X) (X)*(X)
 
 #define MAX_ENTRIES 100000000000
 
 #define N_RUNS 1
 
-#define RUN_NUMB  400257
+#define RUN_NUMB  400287
 
 #define RUN_NUMB2 400242
 #define RUN_NUMB3 300314
@@ -89,10 +91,11 @@
 
 //*****Definitions for Klever experiment
 #define Z118K_1   0.000  //SD1
-#define Z218K_1   0.000  //SD2
-#define Zg18K_1   0.000 //Goniometer-Crystal position
-#define Z318K_1   0.000  //BC
+#define Z218K_1   11.9  //SD2
+#define Zg18K_1   12.22 //Goniometer-Crystal position
+#define Z318K_1   17.227  //T3
 #define ZmMb18K_1 0.000  //mean z of the MB
+#define Zgg18K_1  29.518 //Goniometer-Crystal position
 #define Z418K_1  0.000 //BCgamma
 #define Z518K_1  0.000 //BC1
 #define Z618K_1  0.000 //BC2

@@ -162,6 +162,9 @@ float ypart2 = 0.;
 float xCRY = 0.;
 float yCRY = 0.;
 
+float xGammaCRY = 0.; //calculated initial coodinate of gamma (at the crystal)
+float yGammaCRY = 0.; //calculated initial coodinate of gamma (at the crystal)
+
 float deflX = 0.;
 float deflY = 0.;
 float deflR = 0.;
@@ -185,6 +188,8 @@ float thXin=64.;// murad
 float thXout=64.;// murad
 float thYin=64.;// murad
 float thYout=64.;// murad
+float thXGammain;// murad
+float thYGammain;// murad
 float deflXmar1=-64.;
 float deflXmar2=64.;
 float deflYmar1=-64.;
@@ -246,6 +251,7 @@ float Z1 = 0.;
 float Z2 = 0.;
 float Zg = 0.;
 float Z3 = 0.;
+float Zgg = 0.; //crystal position for the KLEVER experiment
 
 //******VARIABLES TO KLEVER******
 
@@ -385,9 +391,10 @@ if(YEAR==2018 && MONTH==8){
 if(KLEVER){
     Z1 = Z118K_1;
     Z2 = Z218K_1;
-    Zg = Zg18K_1;
+    Zg = Zg18K_1;  // target position
     Z3 = Z318K_1;
     ZmMb = ZmMb18K_1;
+    Zgg =  Zgg18K_1; // crystal position
     Z4 = Z418K_1; //BCgamma
     Z5 = Z518K_1; //BC1
     Z6 = Z618K_1; //BC2
@@ -400,5 +407,6 @@ float D13 = Z3 - Z1; // detector 1-3 distance
 float D23 = Z3 - Z2; // detector 2-3 distance
 float D2g = Zg - Z2; // detector 2-g distance
 float Dg3 = Z3 - Zg; // detector g-3 distance
+float Dgt = Zgg - Z2;//Zg; // crystal - target distance
 
 

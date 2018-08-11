@@ -638,6 +638,8 @@ hxyBC2ePP->Fill(BC2eX,BC2eY); //xy distribution
 hxBC2ePP->Fill(BC2eX); //x distribution
 hyBC2ePP->Fill(BC2eY); //y distribution
 
+hxyGamma->Fill(xGammaCRY,yGammaCRY);
+
 }
 
 

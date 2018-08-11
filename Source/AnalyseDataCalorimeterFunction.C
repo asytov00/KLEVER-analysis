@@ -141,6 +141,30 @@ if(KLEVER){
   calo_crys_tot_energy_gamma = devacal[2];
   calo_crys_tot_energy_efast = devacal[3] + devacal[4] + devacal[5] + devacal[6] + devacal[7];
   
+  
+  thXGammain=-calo_crys_tot_energy_efast/(E0-calo_crys_tot_energy_efast)*deflX+thXin; //calculated initial angle of gamma (before the crystal)
+  thYGammain=-calo_crys_tot_energy_efast/(E0-calo_crys_tot_energy_efast)*deflY+thYin; //calculated initial angle of gamma (before the crystal)
+  
+  xGammaCRY=x2+thXGammain*Dgt; //calculated initial coodinate of gamma (at the crystal)
+  yGammaCRY=y2+thYGammain*Dgt; //calculated initial coodinate of gamma (at the crystal) 
+  
+  if((xGammaCRY >= X_CUT_left) && (xGammaCRY <= X_CUT_right)) {flagposx = 1;}
+  if((yGammaCRY >= Y_CUT_left) && (yGammaCRY <= Y_CUT_right)) {flagposy = 1;}
+
+
+  if((yGammaCRY >= Y_CUT_left) && (yGammaCRY <= Y_CUT_left + yWidth/4)) {flagposy1 = 1;}
+  if((yGammaCRY >= Y_CUT_left + yWidth/4) && (yGammaCRY <= Y_CUT_left + yWidth*2/4)) {flagposy2 = 1;}
+  if((yGammaCRY >= Y_CUT_left + yWidth*2/4) && (yGammaCRY <= Y_CUT_left + yWidth*3/4)) {flagposy3 = 1;}
+  if((yGammaCRY >= Y_CUT_left + yWidth*3/4) && (yGammaCRY <= Y_CUT_right)) {flagposy4 = 1;}
+
+
+  if((xGammaCRY >= X_CUT_left) && (xGammaCRY <= X_CUT_left + xWidth/4)) {flagposx1 = 1;}
+  if((xGammaCRY >= X_CUT_left + xWidth/4) && (xGammaCRY <= X_CUT_left + xWidth*2/4)) {flagposx2 = 1;}
+  if((xGammaCRY >= X_CUT_left + xWidth*2/4) && (xGammaCRY <= X_CUT_left + xWidth*3/4)) {flagposx3 = 1;}
+  if((xGammaCRY >= X_CUT_left + xWidth*3/4) && (xGammaCRY <= X_CUT_left + xWidth*4/4)) {flagposx4 = 1;}
+
+  if(flagposx && flagposy) {flagpos = 1;}
+  
  }
  
  

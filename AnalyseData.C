@@ -731,7 +731,7 @@ sprintf(filesdir,"%s",argv[1]);
 
 			if(KLEVER){
 			  x3 = pos4; //-> microns (see AnalyseDataRedVariables.C)
-                          y3 = pos5; //-> microns (see AnalyseDataRedVariables.C)
+              y3 = pos5; //-> microns (see AnalyseDataRedVariables.C)
 			}
                         
                         

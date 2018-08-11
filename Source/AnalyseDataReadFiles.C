@@ -111,7 +111,8 @@
                 fscanf(filein,"%f",&(posF[i0][j0]));       
             }
     }
-
+     
+    
 	 pos4=posF[0][1]/ 0.0001 ;//cm -> microns // X coordinate in T3
 	 pos5=posF[1][1]/ 0.0001 ;//cm -> microns // Y coordinate in T3
          BcgammaX=posF[2][1]/ 0.0001 ;//cm -> microns //horizontal coordinate in the gamma silicon detector
@@ -119,7 +120,7 @@
          BC1eX=posF[4][1]/ 0.0001 ;//cm -> microns//horizontal coordinate in the B1 detector
          BC1eY=posF[5][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the B1 detector
          BC2eX=posF[6][1]/ 0.0001 ;//cm -> microns //horizontal coordinate in the B2 detector
-         BC2eY=posF[7][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the B2 detector
+         BC2eY=posF[7][1]/ 0.0001 ;//cm -> microns //vertical coordinate in the B2 detector 
          
         //printf("kuku %d %d %d %d %d %d %d %d \n",deva[0],deva[1],deva[2],deva[3],deva[4],deva[5],deva[6],deva[7]);  
          

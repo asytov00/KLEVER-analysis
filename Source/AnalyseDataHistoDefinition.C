@@ -799,4 +799,9 @@ TH2F *hxyBC2ePP = new TH2F("hxyBC2ePP","xy electrons distribution at the BC2 det
 TH1F *hxBC2ePP = new TH1F("hxBC2ePP, x electrons distribution at the BC2 detector with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-90000,150000);
 TH1F *hyBC2ePP = new TH1F("hyBC2ePP, y electrons distribution at the BC2 detector with T3 clasters condition", "xy gamma distribution; Counts; y  [#mum]", 100,-90000,150000);
 
+TH2F *hxyGamma = new TH2F("hxyGamma","Y Vs X of gamma at the crystal;X  [#mum];Y  [#mum]",100,100000,300000,100,100000,300000);
+
+
+
+
 
