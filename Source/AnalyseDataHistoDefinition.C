@@ -682,9 +682,11 @@ TH1F *hy3CluP = new TH1F("hy3CluP","Y3 Clu;Y3 Clu",20,0,20);
 TH1F *hx1Clu = new TH1F("hx1Clu","X1 Clu;X1 Clu",20,0,20);
 TH1F *hx2Clu = new TH1F("hx2Clu","X2 Clu;X2 Clu",20,0,20);
 TH1F *hx3Clu = new TH1F("hx3Clu","X3 Clu;X3 Clu",20,0,20);
+TH1F *hx4Clu = new TH1F("hx4Clu","X4 Clu;X4 Clu",20,0,20);
 TH1F *hy1Clu = new TH1F("hy1Clu","Y1 Clu;Y1 Clu",20,0,20);
 TH1F *hy2Clu = new TH1F("hy2Clu","Y2 Clu;Y2 Clu",20,0,20);
 TH1F *hy3Clu = new TH1F("hy3Clu","Y3 Clu;Y3 Clu",20,0,20);
+TH1F *hy4Clu = new TH1F("hy4Clu","Y4 Clu;Y4 Clu",20,0,20);
 
 ///Multitrack Scan Histograms////
 
@@ -776,6 +778,12 @@ TH2F *hGammaT2xPP = new TH2F("hGammaT2xPP","Gamma cal energy vs T2 x pos with T3
 TH2F *hGammaT2yPP = new TH2F("hGammaT2yPP","Gamma cal energy vs T2 y pos with T3 clasters condition",200,0,2,binCalo,EminCalo,EmaxCalo);
 
 TH1F *helectronPP = new TH1F("helectronPP", "Electrons cal energy", binCalo,EminCalo,EmaxCalo);
+
+TH2F *hGammaelectronPP = new TH2F("hGammaelectronPP","Gamma cal energy vs Electrons cal energy; Electrons cal energy, GeV;  Gamma cal energy, GeV", binCalo,EminCalo,EmaxCalo,binCalo,EminCalo,EmaxCalo);
+
+TH2F *hscin4GammaPP = new TH2F("hscin4GammaPP","Gamma cal energy vs the signal of Scintillator 4; Scintillator 4 signal;  Gamma cal energy, GeV",100,0,20000,binCalo,EminCalo,EmaxCalo);
+
+TH2F *hhx2CluGammaPP = new TH2F("hhx2CluGammaPP","Gamma cal energy vs the signal of Clusters BCgamma; Cluster BCgamma signal;  Gamma cal energy, GeV",20,0,20,binCalo,EminCalo,EmaxCalo);
 
 TH2F *hxygammaPP = new TH2F("hxygammaPP","xy gamma distribution with T3 clasters condition; X  [#mum]; y  [#mum]",100,-90000,150000,100,-90000,150000);
 TH1F *hxgammaPP = new TH1F("hxgammaPP, x gamma distribution with T3 clasters condition", "xy gamma distribution; Counts; x  [#mum]", 100,-90000,150000);
