@@ -600,7 +600,7 @@ hygamma->Fill(BcgammaY); //y distribution
 
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
-if  ((cluster[4]==1) && (cluster[5]==1))
+if  ((cluster[0]==1) && (cluster[1]==1))
 {
     
 hS3maxPP->Fill(scin3);
@@ -619,9 +619,9 @@ hGammaT2xPP->Fill(pos[2],calo_crys_tot_energy_gamma);
 hGammaT2yPP->Fill(pos[3],calo_crys_tot_energy_gamma); 
 
 helectronPP->Fill(calo_crys_tot_energy_efast);
-
 hGammaelectronPP->Fill(calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
 hscin4GammaPP->Fill(scin4,calo_crys_tot_energy_gamma);
+hS4electronPP->Fill(calo_crys_tot_energy_efast,scin4);
 
 //distribution of gamma at the silicon Detectors
 hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
