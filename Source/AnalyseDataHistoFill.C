@@ -600,7 +600,7 @@ hygamma->Fill(BcgammaY); //y distribution
 
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
-if  ((cluster[0]==1) && (cluster[1]==1))
+if  ((cluster[4]==1) && (cluster[5]==1))
 {
     
 hS3maxPP->Fill(scin3);
@@ -638,8 +638,8 @@ hxyBC2ePP->Fill(BC2eX,BC2eY); //xy distribution
 hxBC2ePP->Fill(BC2eX); //x distribution
 hyBC2ePP->Fill(BC2eY); //y distribution
 
-
 }
+
 
 
 

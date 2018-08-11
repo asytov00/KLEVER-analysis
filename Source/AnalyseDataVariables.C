@@ -55,7 +55,8 @@ float devatot;
 float deva_temp;
 float rinotot;
 float piezoc[8];
-int cluster[16]; //# -> cluster hitted in ascii file
+int cluster[8]; //# -> cluster hitted in ascii file
+int cluster0[8]; //#-> cluster(s) pulse in anscii file
 int caldeva2[16];
 float rotang = 0.;
 
@@ -117,6 +118,8 @@ float BC1eX; //horizontal coordinate in the B1 detector
 float BC1eY; //vertical coordinate in the B1 detector
 float BC2eX; //horizontal coordinate in the B2 detector
 float BC2eY; //vertical coordinate in the B2 detector
+float pos4;  //x T3 coordinate 
+float pos5;  //y T3corrdinate
 
 float old_gonio_rot;
 float gonio_rot_first;

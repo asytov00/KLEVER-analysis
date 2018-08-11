@@ -470,8 +470,8 @@ sprintf(filesdir,"%s",argv[1]);
     }
     for(ijkl=6;ijkl<10;ijkl++)
     {
-//        posMin[ijkl] = -10.E4;
-//        posMax[ijkl] = +10.E4;
+        posMin[ijkl] = -10.E4;
+        posMax[ijkl] = +10.E4;
     }
     
 #include "Cuts/GonioFile.C"
@@ -593,7 +593,6 @@ sprintf(filesdir,"%s",argv[1]);
             itot++;
 	    sprintf(filename,"%s/run%06d_multi_%06d.dat",filesdir,runnumb,i);
             
-            //printf("%s \n",filename); commented by Maiolino
             //if(fmod(i+1,5.)==0) printf("%s \n",filename);
             
             double x0temp = 0.;
@@ -729,6 +728,11 @@ sprintf(filesdir,"%s",argv[1]);
                         y4 = pos[7] / 0.0001 ;//cm -> microns
                         x5 = pos[8] / 0.0001 ;//cm -> microns
                         y5 = pos[9] / 0.0001 ;//cm -> microns
+
+			if(KLEVER){
+			  x3 = pos4; //-> microns (see AnalyseDataRedVariables.C)
+                          y3 = pos5; //-> microns (see AnalyseDataRedVariables.C)
+			}
                         
                         
                         hx1na->Fill(x1);
