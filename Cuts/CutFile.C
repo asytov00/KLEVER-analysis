@@ -142,26 +142,6 @@ if( (runnumb >= 300258))
 
 //*************KLEVER EXPERIMENT******************
 
-if(KLEVER){
-
-    deflXmar1=-128.;    deflXmar2=128.;
-    deflYmar1=-128.;    deflYmar2=128.;
-    
-    thXin=128.;
-    thXout=128.;
-    
-    torsion_posYthX=0.;//murad on mm
-    //torsion_posXthX=0.;//20.;//murad on mm
-    meanchang = 0.;
-   
-    X_CUT_left  = 10500.;  //murad
-    X_CUT_right = 14000.;
-    Y_CUT_left  = 8000;    
-    Y_CUT_right = 13500;
-    
-    DEVA_CUT = 600.;
- } 
-
  //PWO
 if( (runnumb >= 300258))
 {
@@ -183,9 +163,9 @@ if( (runnumb >= 300258))
     
     DEVA_CUT = 600.;
  } 
+ 
+ if(KLEVER){
 
-if( (runnumb >= 400000))
-{
     deflXmar1=-128.;    deflXmar2=128.;
     deflYmar1=-128.;    deflYmar2=128.;
     
@@ -196,11 +176,11 @@ if( (runnumb >= 400000))
     //torsion_posXthX=0.;//20.;//murad on mm
     meanchang = 0.;
    
-    X_CUT_left  = 11730.;  
-    X_CUT_right = 13400.;
-    Y_CUT_left  = 8000;//10000.;    
-    Y_CUT_right = 13500;//13800.;
-    //Y_CUT_left = 10500;    Y_CUT_right = 11500;
+    X_CUT_left  = 7300.;  
+    X_CUT_right = 16500.;
+    Y_CUT_left  = 7300.;//10000.;    
+    Y_CUT_right = 16500.;//13800.;
     
     DEVA_CUT = 600.;
  } 
+
