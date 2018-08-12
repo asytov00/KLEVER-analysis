@@ -110,7 +110,8 @@ sprintf(filesdir,"%s",argv[1]);
 #include "Source/AnalyseDataReadFiles.C"
                 
 		 if(FIRSTFILE && up_lin!=0){ 
-                    gonio_rot_first = gonio_rot;
+		    nentries = 0;
+		    gonio_rot_first = gonio_rot;
                     gonio_rot_last = gonio_rot;
                     up_lin_first = up_lin;
                     up_lin_last = up_lin;
@@ -125,6 +126,8 @@ sprintf(filesdir,"%s",argv[1]);
                     FIRSTFILE=0;
 
 		 }
+
+		 nentries++;
                 
 		/*
 		  for(ijkl=0;ijkl<10;ijkl++)
@@ -588,7 +591,9 @@ sprintf(filesdir,"%s",argv[1]);
         printf("Run number =  %d \n",runnumb);
         i = filein_first;
         itot = 0;
-        
+	
+	nentries = 0;
+	
         do{
             itot++;
 	    sprintf(filename,"%s/run%06d_multi_%06d.dat",filesdir,runnumb,i);
@@ -601,7 +606,7 @@ sprintf(filesdir,"%s",argv[1]);
             double y0temp = 0.;
             double y1temp = 0.;
             double y2temp = 0.;
-            
+	    
             if((filein = fopen(filename, "r"))!=NULL){
 	      printf("OPENING FILE: %s (--- %d on %d) \n",filename,i,nfiles[ijk]); 
                 bool bReadLine = true;

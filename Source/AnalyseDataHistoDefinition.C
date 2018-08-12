@@ -508,12 +508,17 @@ TH3F *hdeflXYthYinA = new TH3F("hdeflXYthYinA","Y beam deflection (#Delta#theta_
 //////////////////////// Calorimeter Histograms  ///////////////////////////////
 
 /// 2018 ////
+
+std::cout << nentries << " events in file" << std::endl;
 TH1F *hCalo2018ADC[8];
+TH2F *hCalo2018ADCscan[8];
 for (int ii111 = 0 ; ii111 <8 ; ii111++){
-    sprintf(histoname2,"ADC ( %d ) [#murad]; ADC [channel]; Counts [a.u.]",ii111);
-    sprintf(histoname1,"hCalo2018ADC%1d",ii111);
-    hCalo2018ADC[ii111] = new TH1F(histoname1,histoname2,16000,-0.5,16000-0.5);
-}
+  sprintf(histoname2,"ADC ( %d ) [#murad]; ADC [channel]; Counts [a.u.]",ii111);
+  sprintf(histoname1,"hCalo2018ADC%1d",ii111);
+  hCalo2018ADC[ii111] = new TH1F(histoname1,histoname2,16000,-0.5,16000-0.5);
+  sprintf(histoname1,"hCalo2018ADCscan%1d",ii111);
+  hCalo2018ADCscan[ii111] = new TH2F(histoname1,histoname2,100,0,1000*ceil(nentries/1000),160,-0.5,16000-0.5);
+ }
 
 TH1F *hCalo2018ADC1 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);
 TH1F *hCalo2018ADC2 = new TH1F("hCaloCrysADC","Digit Calo Crys",16000,0,16000);

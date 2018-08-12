@@ -471,6 +471,7 @@ for (torY = 0 ; torY <50 ; torY++)
 
 for (int ii111 = 0 ; ii111 <8 ; ii111++){
     hCalo2018ADC[ii111]->Fill(deva[ii111]);
+    hCalo2018ADCscan[ii111]->Fill(nentries,deva[ii111]);
 }
 //scan plots for gamma 2018
 
