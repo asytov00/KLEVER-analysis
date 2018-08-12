@@ -109,10 +109,10 @@ if( (runnumb >= 300225)) {
 //***************KLEVER EXPERIMENT*****************
 
 
-if(KLEVER){ 
+if (KLEVER) { 
   
-  scin3=deva[0]; //scintillator before crystal
-  scin4=deva[1];  //scintillator after crystal
+  scin3 = deva[0]; //scintillator before crystal
+  scin4 = deva[1];  //scintillator after crystal
   
   devacal[2] = (deva[2]+145.053)/79.7879;
   devacal[3] = (deva[3]+104.883)/78.1859;
@@ -137,7 +137,18 @@ if(KLEVER){
     devacal[3] = (deva[3]+142.897)/93.9701;
     
   }
-  
+
+  if (runnumb >= 400289) { // calibration from 400312
+    
+    devacal[2] = (deva[2]+310.928)/103.078;
+    devacal[3] = (deva[3]+162.823)/73.0963;
+    devacal[4] = (deva[4]+222.128)/108.491;
+    devacal[5] = (deva[5]+115.262)/102.381;
+    devacal[6] = (deva[6]+193.604)/82.7409;
+    devacal[7] = (deva[7]+180.202)/85.7358;
+    
+  }
+
   calo_crys_tot_energy_gamma = devacal[2];
   calo_crys_tot_energy_efast = devacal[3] + devacal[4] + devacal[5] + devacal[6] + devacal[7];
   
