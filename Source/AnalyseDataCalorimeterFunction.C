@@ -149,15 +149,14 @@ if (KLEVER) {
     
   }
 
+  if (runnumb >= 400318) { // after jump in 400317, calibration from 400319
+    
+    devacal[3] = (deva[3]+221.947)/80.8682;
+    
+  }
+
   calo_crys_tot_energy_gamma = devacal[2];
   calo_crys_tot_energy_efast = devacal[3] + devacal[4] + devacal[5] + devacal[6] + devacal[7];
   
  }
- 
- 
- 
- 
- 
- 
- 
  
