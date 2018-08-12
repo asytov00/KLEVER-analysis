@@ -564,6 +564,27 @@ if(flagpos) h2RotPhotomP->Fill((float)h2st+divcorr,photom);
 if(flagpos) h2RotPhotom_inP->Fill((float)h2st-divcorr,photom); 
 
 //*******HISTOGRAMS FOR KLEVER EXPERIMENT
+if(KLEVER){ 
+    
+    
+  thXGammain=-calo_crys_tot_energy_efast/(E0-calo_crys_tot_energy_efast)*deflX+thXin; //calculated initial angle of gamma (before the crystal)
+  thYGammain=-calo_crys_tot_energy_efast/(E0-calo_crys_tot_energy_efast)*deflY+thYin; //calculated initial angle of gamma (before the crystal)
+  
+  xGammaCRY=x2+thXGammain*Dgt; //calculated initial coodinate of gamma (at the crystal)
+  yGammaCRY=y2+thYGammain*Dgt; //calculated initial coodinate of gamma (at the crystal) 
+  
+  flagpos = 0;
+  flagposx = 0;
+  flagposy = 0;
+  
+  if((xGammaCRY >= X_CUT_left) && (xGammaCRY <= X_CUT_right)) {flagposx = 1;}
+  if((yGammaCRY >= Y_CUT_left) && (yGammaCRY <= Y_CUT_right)) {flagposy = 1;}
+
+//    if((xGammaCRY <= X_CUT_left) || (xGammaCRY >= X_CUT_right)) {flagposx = 1;}
+//    if((yGammaCRY <= Y_CUT_left) || (yGammaCRY >= Y_CUT_right)) {flagposy = 1;}    
+    
+  if(flagposx && flagposy) {flagpos = 1;}     
+
 
 hS3max->Fill(scin3);
 hS4max->Fill(scin4);
@@ -600,48 +621,114 @@ hygamma->Fill(BcgammaY); //y distribution
 
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
+// choose single trajectory at the T3
 if  ((cluster[0]==1) && (cluster[1]==1))
 {
     
-hS3maxPP->Fill(scin3);
-hS4maxPP->Fill(scin4);
+    hS3maxP->Fill(scin3);
+    hS4maxP->Fill(scin4);
 
-hS4maxScanPP->Fill((float)h2st,scin4);
+    hS4maxScanP->Fill((float)h2st,scin4);
 
-hS4maxGonioPP->Fill((float)gonio_rot,scin4);
+    hS4maxGonioP->Fill((float)gonio_rot,scin4);
 
-hGammaPP->Fill(calo_crys_tot_energy_gamma);
-hGammaStepPP->Fill((float)goniostep,calo_crys_tot_energy_gamma);
-hS4StepPP->Fill((float)goniostep,scin4);
+    hGammaP->Fill(calo_crys_tot_energy_gamma);
+    hGammaStepP->Fill((float)goniostep,calo_crys_tot_energy_gamma);
+    hS4StepP->Fill((float)goniostep,scin4);
 
-hGammaS4PP->Fill(scin4,calo_crys_tot_energy_gamma);
-hGammaT2xPP->Fill(pos[2],calo_crys_tot_energy_gamma);
-hGammaT2yPP->Fill(pos[3],calo_crys_tot_energy_gamma); 
+    hGammaS4P->Fill(scin4,calo_crys_tot_energy_gamma);
+    hGammaT2xP->Fill(pos[2],calo_crys_tot_energy_gamma);
+    hGammaT2yP->Fill(pos[3],calo_crys_tot_energy_gamma); 
 
-helectronPP->Fill(calo_crys_tot_energy_efast);
-hGammaelectronPP->Fill(calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
-hscin4GammaPP->Fill(scin4,calo_crys_tot_energy_gamma);
-hS4electronPP->Fill(calo_crys_tot_energy_efast,scin4);
+    helectronP->Fill(calo_crys_tot_energy_efast);
+    hGammaelectronP->Fill(calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
+    hGammaGammaP->Fill(E0-calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
+    hscin4GammaP->Fill(scin4,calo_crys_tot_energy_gamma);
+    hS4electronP->Fill(calo_crys_tot_energy_efast,scin4);
 
-//distribution of gamma at the silicon Detectors
-hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
-hxgammaPP->Fill(BcgammaX); //x distribution
-hygammaPP->Fill(BcgammaY); //y distribution
+    //distribution of gamma at the silicon Detectors
+    hxygammaP->Fill(BcgammaX,BcgammaY); //xy distribution
+    hxgammaP->Fill(BcgammaX); //x distribution
+    hygammaP->Fill(BcgammaY); //y distribution
 
-//distribution of electrons at the BC1 Detectors
-hxyBC1ePP->Fill(BC1eX,BC1eY); //xy distribution
-hxBC1ePP->Fill(BC1eX); //x distribution
-hyBC1ePP->Fill(BC1eY); //y distribution
+    //distribution of electrons at the BC1 Detectors
+    hxyBC1eP->Fill(BC1eX,BC1eY); //xy distribution
+    hxBC1eP->Fill(BC1eX); //x distribution
+    hyBC1eP->Fill(BC1eY); //y distribution
 
-//distribution of electrons at the BC2 Detectors
-hxyBC2ePP->Fill(BC2eX,BC2eY); //xy distribution
-hxBC2ePP->Fill(BC2eX); //x distribution
-hyBC2ePP->Fill(BC2eY); //y distribution
+    //distribution of electrons at the BC2 Detectors
+    hxyBC2eP->Fill(BC2eX,BC2eY); //xy distribution
+    hxBC2eP->Fill(BC2eX); //x distribution
+    hyBC2eP->Fill(BC2eY); //y distribution
 
-hxyGamma->Fill(xGammaCRY,yGammaCRY);
+    hxyGammaCRYP->Fill(xGammaCRY,yGammaCRY);
+    hxCRYGammaP->Fill(xGammaCRY,calo_crys_tot_energy_gamma);
+    hxCRYscin4P->Fill(xGammaCRY,scin4);
+
+    hyCRYGammaP->Fill(yGammaCRY,calo_crys_tot_energy_gamma);
+    hyCRYscin4P->Fill(yGammaCRY,scin4);
+    
+    
+    hx13P2->Fill(x1-x3);
+    hx23P2->Fill(x2-x3);
+    hx12P2->Fill(x1-x2);
+
+    hy13P2->Fill(y1-y3);
+    hy23P2->Fill(y2-y3);   
+    hy12P2->Fill(y1-y2);
+    
+    
+    // choose cut of gamma beam
+    if(flagpos==1)//((calo_crys_tot_energy_efast<80.))//(flagpos==0) && 
+    {
+
+        hS3maxPP->Fill(scin3);
+        hS4maxPP->Fill(scin4);
+
+        hS4maxScanPP->Fill((float)h2st,scin4);
+
+        hS4maxGonioPP->Fill((float)gonio_rot,scin4);
+
+        hGammaPP->Fill(calo_crys_tot_energy_gamma);
+        hGammaStepPP->Fill((float)goniostep,calo_crys_tot_energy_gamma);
+        hS4StepPP->Fill((float)goniostep,scin4);
+
+        hGammaS4PP->Fill(scin4,calo_crys_tot_energy_gamma);
+        hGammaT2xPP->Fill(pos[2],calo_crys_tot_energy_gamma);
+        hGammaT2yPP->Fill(pos[3],calo_crys_tot_energy_gamma); 
+
+        helectronPP->Fill(calo_crys_tot_energy_efast);
+        hGammaelectronPP->Fill(calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
+        hGammaGammaPP->Fill(E0-calo_crys_tot_energy_efast,calo_crys_tot_energy_gamma);
+        hscin4GammaPP->Fill(scin4,calo_crys_tot_energy_gamma);
+        hS4electronPP->Fill(calo_crys_tot_energy_efast,scin4);
+
+        //distribution of gamma at the silicon Detectors
+        hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
+        hxgammaPP->Fill(BcgammaX); //x distribution
+        hygammaPP->Fill(BcgammaY); //y distribution
+
+        //distribution of electrons at the BC1 Detectors
+        hxyBC1ePP->Fill(BC1eX,BC1eY); //xy distribution
+        hxBC1ePP->Fill(BC1eX); //x distribution
+        hyBC1ePP->Fill(BC1eY); //y distribution
+
+        //distribution of electrons at the BC2 Detectors
+        hxyBC2ePP->Fill(BC2eX,BC2eY); //xy distribution
+        hxBC2ePP->Fill(BC2eX); //x distribution
+        hyBC2ePP->Fill(BC2eY); //y distribution
+
+        hxyGammaCRYPP->Fill(xGammaCRY,yGammaCRY);
+        hxCRYGammaPP->Fill(xGammaCRY,calo_crys_tot_energy_gamma);   
+        hxCRYscin4PP->Fill(xGammaCRY,scin4);    
+        
+        hyCRYGammaPP->Fill(yGammaCRY,calo_crys_tot_energy_gamma);   
+        hyCRYscin4PP->Fill(yGammaCRY,scin4);          
+
+    }
 
 }
 
-
+}
 
 
