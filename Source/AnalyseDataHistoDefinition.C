@@ -747,6 +747,10 @@ TH2F *hGammaStep = new TH2F("hGammaStep","Gamma energy vs scan step",step_last-s
 
 TH2F *hS4Step = new TH2F("hS4Step","S4 signal vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,100,0,20000);
 
+TH2F *hBCgxStep = new TH2F("hBCgxStep","Si gamma x multiplicity vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,10,-0.5,9.5);
+
+TH2F *hBCgyStep = new TH2F("hBCgyStep","Si gamma y multiplicity vs scan step",step_last-step_first+1,step_first-0.5,step_last+0.5,10,-0.5,9.5);
+
 TH2F *hGammaS4 = new TH2F("hGammaS4", "Gamma cal energy vs S4 signal", 200, 0, 20000,binCalo,EminCalo,EmaxCalo);
 
 TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,binCalo,EminCalo,EmaxCalo);

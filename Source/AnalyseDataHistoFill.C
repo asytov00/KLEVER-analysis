@@ -598,6 +598,10 @@ hGamma->Fill(calo_crys_tot_energy_gamma);
 hGammaStep->Fill((float)goniostep,calo_crys_tot_energy_gamma);
 hS4Step->Fill((float)goniostep,scin4);
 
+ hBCgxStep->Fill((float)goniostep,cluster[2]);
+ hBCgyStep->Fill((float)goniostep,cluster[3]);
+ 
+ 
 helectron->Fill(calo_crys_tot_energy_efast);
 
 hGammaS4->Fill(scin4,calo_crys_tot_energy_gamma);
@@ -623,7 +627,8 @@ hygamma->Fill(BcgammaY); //y distribution
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
 // choose single trajectory at the T3
-if  ((cluster[0]==1) && (cluster[1]==1))
+ if (1)
+//if  ((cluster[0]==1) && (cluster[1]==1))
 {
     
     hS3maxP->Fill(scin3);
