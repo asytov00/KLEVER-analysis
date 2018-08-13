@@ -626,11 +626,18 @@ hygamma->Fill(BcgammaY); //y distribution
 
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
+hXCluBCgammaLat->Fill((float)h2st,cluster[2]);
+hYCluBCgammaLat->Fill((float)h2st,cluster[3]); 
+ 
+
 // choose single trajectory at the T3
  if (1)
 //if  ((cluster[0]==1) && (cluster[1]==1))
 {
-    
+
+    hXCluBCgammaLatP->Fill((float)h2st,cluster[2]);
+    hYCluBCgammaLatP->Fill((float)h2st,cluster[3]);
+  
     hS3maxP->Fill(scin3);
     hS4maxP->Fill(scin4);
 
@@ -691,6 +698,8 @@ hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
         hS3maxPP->Fill(scin3);
         hS4maxPP->Fill(scin4);
 
+
+
         hS4maxScanPP->Fill((float)h2st,scin4);
 
         hS4maxGonioPP->Fill((float)gonio_rot,scin4);
@@ -729,7 +738,9 @@ hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
         hxCRYscin4PP->Fill(xGammaCRY,scin4);    
         
         hyCRYGammaPP->Fill(yGammaCRY,calo_crys_tot_energy_gamma);   
-        hyCRYscin4PP->Fill(yGammaCRY,scin4);          
+        hyCRYscin4PP->Fill(yGammaCRY,scin4);
+
+	
 
     }
 
