@@ -812,6 +812,12 @@ TH2F *hxCRYscin4P = new TH2F("hxCRYscin4P","The signal of Scintillator 4 Vs X of
 TH2F *hyCRYGammaP = new TH2F("hyCRYGammaP","Gamma cal energy Vs Y of gamma at the crystal with T3 clasters condition;Y  [#mum];Gamma cal energy, [GeV]",1000,-300000,300000,140,0,140);
 TH2F *hyCRYscin4P = new TH2F("hyCRYscin4P","The signal of Scintillator 4 Vs Y of gamma at the crystal with T3 clasters condition;Y  [#mum];Scintillator 4 signal",1000,-300000,300000,100,0,20000);
 
+TH2F *hXCluBCgammaLat = new TH2F("hXCluBCgammaLat","Number Cluster in X-axis BCgamma Vs Lateral Scan (without T3 clasters condition);Lateral Scan [#mum]; Number of Clusters",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *hYCluBCgammaLat = new TH2F("hYCluBCgammaLat","Number Cluster in Y-axis BCgamma Vs Lateral Scan (withtout T3 clasters condition);Lateral Scan [#mum]; Number of Clusters",(nbin+4)*20,rotSX,rotDX,20,0,20);
+
+TH2F *hXCluBCgammaLatP = new TH2F("hXCluBCgammaLatP","Number Cluster in X-axis BCgamma Vs Lateral Scan (without T3 clasters condition);Lateral Scan [#mum]; Number of Clusters",(nbin+4)*20,rotSX,rotDX,20,0,20);
+TH2F *hYCluBCgammaLatP = new TH2F("hYCluBCgammaLatP","Number Cluster in Y-axis BCgamma Vs Lateral Scan (withtout T3 clasters condition);Lateral Scan [#mum]; Number of Clusters",(nbin+4)*20,rotSX,rotDX,20,0,20);
+
 TH1F *hx13P2 = new TH1F("hx13P2","X position difference with T3 clasters condition; X3-X1 [#mum]",50000,-3600000,3600000);
 TH1F *hx23P2 = new TH1F("hx23P2","X position difference with T3 clasters condition; X3-X2 [#mum]",50000,-3600000,3600000);
 TH1F *hx12P2 = new TH1F("hx12P2","X position difference with T3 clasters condition; X3-X1 [#mum]",50000,-3600000,3600000);
