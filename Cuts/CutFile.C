@@ -176,11 +176,33 @@ if( (runnumb >= 300258))
     //torsion_posXthX=0.;//20.;//murad on mm
     meanchang = 0.;
    
-    X_CUT_left  = 7300.;  
-    X_CUT_right = 16500.;
-    Y_CUT_left  = 7300.;//10000.;    
-    Y_CUT_right = 16500.;//13800.;
+    X_CUT_left  = 7700.;  
+    X_CUT_right = 16700.;
+    Y_CUT_left  = 7600.;//10000.;    
+    Y_CUT_right = 16600.;//13800.;
     
     DEVA_CUT = 600.;
+    
+if( (runnumb >= 400437))
+{
+    deflXmar1=-128.;    deflXmar2=128.;
+    deflYmar1=-128.;    deflYmar2=128.;
+    
+    thXin=128.;
+    thXout=128.;
+    
+    torsion_posYthX=0.;//murad on mm
+    //torsion_posXthX=0.;//20.;//murad on mm
+    meanchang = 0.;
+   
+    X_CUT_left  = 8100.;  
+    X_CUT_right = 15100.;
+    Y_CUT_left  = 8500;//10000.;    
+    Y_CUT_right = 14500;//13800.;
+    //Y_CUT_left = 10500;    Y_CUT_right = 11500;
+    
+    DEVA_CUT = 600.;
+ }     
+    
  } 
 

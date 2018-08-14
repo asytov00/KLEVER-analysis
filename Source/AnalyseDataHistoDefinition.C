@@ -758,7 +758,7 @@ TH2F *hGammaT2x = new TH2F("hGammaT2x","Gamma cal energy vs T2 x pos",200,0,2,bi
 TH2F *hGammaT2y = new TH2F("hGammaT2y","Gamma cal energy vs T2 y pos",200,0,2,binCalo,EminCalo,EmaxCalo);
 
 TH1F *helectron = new TH1F("helectron", "Electrons cal energy", binCalo,EminCalo,EmaxCalo);
-TH2F *hS4electronP = new TH2F("hS4electronP", "S4 vs electron cal energy", binCalo,EminCalo,EmaxCalo,100,0,20000);
+TH2F *hS4electronP = new TH2F("hS4electronP", "S4 vs electron cal energy; electron cal energy, GeV; Scintillator S4 Max", binCalo,EminCalo,EmaxCalo,100,0,20000);
 
 
 
@@ -860,7 +860,7 @@ TH2F *hGammaT2yPP = new TH2F("hGammaT2yPP","Gamma cal energy vs T2 y pos with T3
 
 TH1F *helectronPP = new TH1F("helectronPP", "Electrons cal energy with T3 clusters condition and with the cut", binCalo,EminCalo,EmaxCalo);
 
-TH2F *hS4electronPP = new TH2F("hS4electronPP", "S4 vs electron cal energy with T3 clusters condition and with the cut", binCalo,EminCalo,EmaxCalo,100,0,20000);
+TH2F *hS4electronPP = new TH2F("hS4electronPP", "S4 vs electron cal energy with T3 clusters condition and with the cut; electron cal energy, GeV; Scintillator S4 Max", binCalo,EminCalo,EmaxCalo,100,0,20000);
 
 TH2F *hGammaelectronPP = new TH2F("hGammaelectronPP","Gamma cal energy vs Electrons cal energy with T3 clusters condition and with the cut; Electrons cal energy, GeV;  Gamma cal energy, GeV", binCalo,EminCalo,EmaxCalo,binCalo,EminCalo,EmaxCalo);
 
