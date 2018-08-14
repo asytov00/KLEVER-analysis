@@ -598,8 +598,8 @@ hGamma->Fill(calo_crys_tot_energy_gamma);
 hGammaStep->Fill((float)goniostep,calo_crys_tot_energy_gamma);
 hS4Step->Fill((float)goniostep,scin4);
 
- hBCgxStep->Fill((float)goniostep,cluster[2]);
- hBCgyStep->Fill((float)goniostep,cluster[3]);
+hBCgxStep->Fill((float)goniostep,cluster[2]);
+hBCgyStep->Fill((float)goniostep,cluster[3]);
  
  
 helectron->Fill(calo_crys_tot_energy_efast);
@@ -620,9 +620,11 @@ hy4Clu->Fill(cluster[7]);
 
 
 //distribution of gamma at the silicon Detectors
-hxygamma->Fill(BcgammaX,BcgammaY); //xy distribution
-hxgamma->Fill(BcgammaX); //x distribution
-hygamma->Fill(BcgammaY); //y distribution
+ if (cluster[2] == 1 && cluster[3] ==1) {
+   hxygamma->Fill(BcgammaX,BcgammaY); //xy distribution
+   hxgamma->Fill(BcgammaX); //x distribution
+   hygamma->Fill(BcgammaY); //y distribution
+ }
 
 hhx2CluGammaPP->Fill(cluster[2],calo_crys_tot_energy_gamma);
 
@@ -631,8 +633,7 @@ hYCluBCgammaLat->Fill((float)h2st,cluster[3]);
  
 
 // choose single trajectory at the T3
- if (1)
-//if  ((cluster[0]==1) && (cluster[1]==1))
+if  ((cluster[0]==1) && (cluster[1]==1))
 {
 
     hXCluBCgammaLatP->Fill((float)h2st,cluster[2]);
@@ -659,11 +660,23 @@ hYCluBCgammaLat->Fill((float)h2st,cluster[3]);
     hscin4GammaP->Fill(scin4,calo_crys_tot_energy_gamma);
     hS4electronP->Fill(calo_crys_tot_energy_efast,scin4);
 
-    //distribution of gamma at the silicon Detectors
-    hxygammaP->Fill(BcgammaX,BcgammaY); //xy distribution
-    hxgammaP->Fill(BcgammaX); //x distribution
-    hygammaP->Fill(BcgammaY); //y distribution
+    hCl2P->Fill(cluster[2]);
+    hCl2GammaP->Fill(calo_crys_tot_energy_gamma,cluster[2]);
+    hCl2electronP->Fill(calo_crys_tot_energy_efast,cluster[2]);
+    hCl2S4P->Fill(scin4,cluster[2]);
 
+    hCl3P->Fill(cluster[3]);
+    hCl3GammaP->Fill(calo_crys_tot_energy_gamma,cluster[3]);
+    hCl3electronP->Fill(calo_crys_tot_energy_efast,cluster[3]);
+    hCl3S4P->Fill(scin4,cluster[3]);
+     
+    //distribution of gamma at the silicon Detectors
+    if (cluster[2] == 1 && cluster[3] == 1) {
+      hxygammaP->Fill(BcgammaX,BcgammaY); //xy distribution
+      hxgammaP->Fill(BcgammaX); //x distribution
+      hygammaP->Fill(BcgammaY); //y distribution
+    }
+    
     //distribution of electrons at the BC1 Detectors
     hxyBC1eP->Fill(BC1eX,BC1eY); //xy distribution
     hxBC1eP->Fill(BC1eX); //x distribution
@@ -698,8 +711,6 @@ hYCluBCgammaLat->Fill((float)h2st,cluster[3]);
         hS3maxPP->Fill(scin3);
         hS4maxPP->Fill(scin4);
 
-
-
         hS4maxScanPP->Fill((float)h2st,scin4);
 
         hS4maxGonioPP->Fill((float)gonio_rot,scin4);
@@ -719,10 +730,12 @@ hYCluBCgammaLat->Fill((float)h2st,cluster[3]);
         hS4electronPP->Fill(calo_crys_tot_energy_efast,scin4);
 
         //distribution of gamma at the silicon Detectors
-        hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
-        hxgammaPP->Fill(BcgammaX); //x distribution
-        hygammaPP->Fill(BcgammaY); //y distribution
-
+        if (cluster[2] == 1 && cluster[3] == 1) {
+	  hxygammaPP->Fill(BcgammaX,BcgammaY); //xy distribution
+	  hxgammaPP->Fill(BcgammaX); //x distribution
+	  hygammaPP->Fill(BcgammaY); //y distribution
+	}
+	
         //distribution of electrons at the BC1 Detectors
         hxyBC1ePP->Fill(BC1eX,BC1eY); //xy distribution
         hxBC1ePP->Fill(BC1eX); //x distribution
