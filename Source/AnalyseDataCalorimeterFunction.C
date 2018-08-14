@@ -155,6 +155,17 @@ if (KLEVER) {
     
   }
 
+  if (runnumb >= 400419) {
+    
+    devacal[2] = (deva[2]+211.711)/96.4751;
+    devacal[3] = (deva[3]+198.545)/77.0696;
+    devacal[4] = (deva[4]+186.136)/104.751;
+    devacal[5] = (deva[5]+134.450)/101.141;
+    devacal[6] = (deva[6]+181.145)/82.2538;
+    devacal[7] = (deva[7]+194.522)/85.4621;
+    
+  }
+
   calo_crys_tot_energy_gamma = devacal[2];
   calo_crys_tot_energy_efast = devacal[3] + devacal[4] + devacal[5] + devacal[6] + devacal[7];
   
